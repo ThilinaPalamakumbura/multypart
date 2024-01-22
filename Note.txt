@@ -1,0 +1,1 @@
+https://medium.com/techpanel/multipartfile-with-springboot-d4901ee3e77d
