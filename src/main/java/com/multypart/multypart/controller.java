@@ -10,12 +10,14 @@ import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.*;
 import org.springframework.web.multipart.MultipartFile;
 
+import java.util.List;
+
 @Controller
 @RequestMapping("/files")
 public class controller {
 
     @PostMapping(value = "/uploadFile",consumes = MediaType.MULTIPART_FORM_DATA_VALUE,produces = MediaType.APPLICATION_JSON_VALUE)
-    public ResponseEntity<String> uploadFiles(@RequestPart(value = "file")MultipartFile file){
+    public ResponseEntity<String> uploadFiles(@RequestPart(value = "file") List <MultipartFile> file){
 
         service.uploadFile(file);
         return new ResponseEntity<>("Succuss", HttpStatus.OK);
